@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Calculator</title>
+    <style>
+        button{
+            width:100%;
+            border-radius: 100px;
+            font-size: 30px;
+            cursor:pointer;
+        }
+        body{
+            content:'';
+            position:fixed;
+            width:100vw;
+            height:100vh;
+            background-image:url(1.jpeg);                                                   
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color:rgb(171, 236, 171);
+        
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+            border:5px solid black;
+            margin-bottom: 200px;
+            font:bold;
+            background-color:black;
+            border-radius:30px;
+            
+            
+            
+        }
+        tr{
+            font-size: 15px;
+        }
+        h1{
+            text-align:center;
+            color:white;
+            background-color: black;
+            margin-top:-10px;
+            margin-left: -10px;
+            font-size:50px;
+            padding-top:0px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #input{
+            font-size: 25px;
+            border-radius: 20px;
+           
+        }
+        @media only screen and (max-width:500px){
+            body{
+                content:'';
+            position:fixed;
+            width:100vw;
+            height:100vh;
+            background-image:url(1.jpeg);                                                   
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color:rgb(171, 236, 171);
+
+            }
+
+        }
+        
+        
+    </style>
+    <h1>CALCULATOR</h1>
+</head>
+<body>
+    <main>
+        
+        <table border="3"  cellspacing="20" cellpadding="0"  width=30% height="30%">
+            <tr>
+              <td colspan="3" ><input value="0" id="input" type="text"></td>  
+              <td id="cle"><button onclick="clean()">C</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('1')">1</button></td>
+                <td><button onclick="dis('2')">2</button></td>
+                <td><button onclick="dis('3')">3</button></td>
+                <td><button onclick="dis('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('4')">4</button></td>
+                <td><button onclick="dis('5')">5</button></td>
+                <td><button onclick="dis('6')">6</button></td>
+                <td><button onclick="dis('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('7')">7</button></td>
+                <td><button onclick="dis('8')">8</button></td>
+                <td><button onclick="dis('9')">9</button></td>
+                <td><button onclick="dis('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('0')">0</button></td>
+                <td><button onclick="dis('.')">.</button></td>
+                <td><button onclick="dis('/')">/</button></td>
+                <td><button onclick="solve()">=</button></td>
+            </tr>
+        </table>
+    </main>
+    <script>
+        function dis(x){
+            if(document.getElementById("input").value==0){
+                document.getElementById("input").value="";
+                document.getElementById("input").value=x;
+            }
+            else{
+                document.getElementById("input").value+=x;
+            }
+            
+        }
+        function solve(){
+            var x=document.getElementById("input").value;
+            var y=eval(x);
+            document.getElementById("input").value=y;
+        }
+        function clean(){
+             document.getElementById("input").value=0;
+        }
+    </script>
+
+</body>
+</html>
